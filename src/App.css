@@ -1,38 +1,110 @@
-.App {
+.body{
+  background-color: #f148b0;
+  display: grid;
+  grid-template-rows: repeat(12,auto);
+  grid-template-columns: repeat(12,auto);
+  gap:10px
+}
+.topnav{
+  background-color: beige;
+  grid-area: 1/1/2/13;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.content{
+  background-color: #b0bec8;
+  grid-area: 2/1/12/13;
   text-align: center;
+  display: grid;
+}
+table{
+  border: 1px ;
+}
+.gomoku{
+  display: grid;
+  grid-template-rows: 50px auto;
+  gap: 10px;
+}
+.gomokuBar{
+  background-color: #69c27b;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 10px;
+}
+.gomokuBoard{
+  background-color: #960c7b;
+  background-color: #bbb;
+}
+.footer{
+  background-color: blanchedalmond;
+  grid-area: 12/1/13/13;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.menu{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+.menu-item{
+  float:left;
+  border-right: 1px solid #bbb;
+}
+.menu-item:last-child{
+  border-right: none;
+}
+.menu-item a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.menu-item a:hover:not(.active){
+  background-color: #111;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
 }
