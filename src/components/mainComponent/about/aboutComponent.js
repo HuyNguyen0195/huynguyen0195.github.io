@@ -9,10 +9,7 @@ import {
   MDBCardImage,
   MDBBtn,
   MDBProgress,
-  MDBProgressBar,
-  MDBIcon,
-  MDBListGroup,
-  MDBListGroupItem
+  MDBProgressBar
 } from 'mdb-react-ui-kit';
 
 export default function ProfilePage() {

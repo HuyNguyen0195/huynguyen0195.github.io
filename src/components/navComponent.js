@@ -1,25 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { NavLink,Nav,NavItem} from 'reactstrap';
+import { NavLink } from 'react-router-dom';
+import { Nav,NavItem} from 'reactstrap';
 
 function NavBarStrap() {
   return (
     <div >
           <Nav pills >
             <NavItem>
-              <NavLink><Link to='/' > Home</Link></NavLink>
+              <NavLink to='/' > Home</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink><Link to='/gomoku'>AI Gomoku</Link></NavLink>
+              <NavLink to='/gomoku'>AI Gomoku</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink ><Link to='/mongo'>MongoDB</Link></NavLink>
+              <NavLink  to='/mongo'>MongoDB</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink><Link to='/redux' >Redux Store</Link></NavLink>
+              <NavLink  to='/redux' >Redux Store</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink><Link to='/about'>About</Link></NavLink>
+              <NavLink  to='/about'>About</NavLink>
             </NavItem>
           </Nav>
     </div>

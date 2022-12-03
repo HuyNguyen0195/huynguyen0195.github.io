@@ -2,12 +2,12 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './components/footerComponent';
 import {Route, Routes } from 'react-router-dom'
-import About from './components/mainComponent/about/about';
-import Mongo from './components/mainComponent/mongo/mongo';
-import Gomoku from './components/mainComponent/games/gomoku';
-import ReduxStore from './components/mainComponent/reduxStore/reduxStore';
+import About from './components/mainComponent/about/aboutComponent';
+import Mongo from './components/mainComponent/mongo/mongoComponent';
+import Gomoku from './components/mainComponent/games/gomokuComponent';
 import NavBarStrap from './components/navComponent';
-import NoPage from './components/mainComponent/noPage';
+import ReduxStore from './components/mainComponent/carApiComponent';
+import NoPage from './components/mainComponent/noPageComponent';
 
 function App() {
   return (
