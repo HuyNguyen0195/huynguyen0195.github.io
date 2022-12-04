@@ -6,8 +6,8 @@ import About from './components/mainComponent/about/aboutComponent';
 import Mongo from './components/mainComponent/mongo/mongoComponent';
 import Gomoku from './components/mainComponent/games/gomokuComponent';
 import NavBarStrap from './components/navComponent';
-import ReduxStore from './components/mainComponent/carApiComponent';
 import NoPage from './components/mainComponent/noPageComponent';
+import CarApi from './components/mainComponent/carApiFetching/carApi';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
               <Route path='/' element={<About/>}/>
               <Route path='/mongo' element={<Mongo/>}/>
               <Route path='/gomoku' element={<Gomoku/>}/>
-              <Route path='/redux' element={<ReduxStore/>}/>
+              <Route path='/redux' element={<CarApi/>}/>
               <Route path='/about' element={<About/>}/>
               <Route path='/*' element={<NoPage/>}/>
             </Routes>
