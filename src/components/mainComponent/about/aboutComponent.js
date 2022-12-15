@@ -80,8 +80,8 @@ export default function ProfilePage() {
               <MDBCol md="6">
                 <MDBCard className="mb-4 mb-md-0">
                   <MDBCardBody>
-                    <MDBCardText className="mb-4"><span className="text-primary font-italic me-1">Programing</span> Skills</MDBCardText>
-                    <MDBCardText className="mb-1" style={{ fontSize: '.77rem' }}>Web Design</MDBCardText>
+                    <MDBCardText className="mb-4"><span className="text-primary font-italic me-1">Front End</span> Skills</MDBCardText>
+                    <MDBCardText className="mb-1" style={{ fontSize: '.77rem' }}>HTML / CSS / BootStrap</MDBCardText>
                     <MDBProgress className="rounded">
                       <MDBProgressBar width={100} valuemin={0} valuemax={100} />
                     </MDBProgress>
@@ -91,12 +91,24 @@ export default function ProfilePage() {
                       <MDBProgressBar width={100} valuemin={0} valuemax={100} />
                     </MDBProgress>
 
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>ReactJS</MDBCardText>
+                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>ReactJS / Redux</MDBCardText>
                     <MDBProgress className="rounded">
                       <MDBProgressBar width={100} valuemin={0} valuemax={100} />
                     </MDBProgress>
 
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>NodeJS</MDBCardText>
+                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>React Native</MDBCardText>
+                    <MDBProgress className="rounded">
+                      <MDBProgressBar width={100} valuemin={0} valuemax={100} />
+                    </MDBProgress>
+
+                  </MDBCardBody>
+                </MDBCard>
+              </MDBCol>
+              <MDBCol>
+                <MDBCard>
+                  <MDBCardBody>
+                  <MDBCardText className="mb-4"><span className="text-primary font-italic me-1">Back End</span> Skills</MDBCardText>
+                  <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>NodeJS</MDBCardText>
                     <MDBProgress className="rounded">
                       <MDBProgressBar width={90} valuemin={0} valuemax={100} />
                     </MDBProgress>
@@ -106,16 +118,13 @@ export default function ProfilePage() {
                       <MDBProgressBar width={90} valuemin={0} valuemax={100} />
                     </MDBProgress>
                     
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>React Native</MDBCardText>
+                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>CI-CD / AWS / EC2 / S3 </MDBCardText>
                     <MDBProgress className="rounded">
                       <MDBProgressBar width={90} valuemin={0} valuemax={100} />
                     </MDBProgress>
-
                   </MDBCardBody>
                 </MDBCard>
               </MDBCol>
-
-
             </MDBRow>
           </MDBCol>
         </MDBRow>

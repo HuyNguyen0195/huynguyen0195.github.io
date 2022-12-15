@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import axios from "axios";
-import {MDBTable,MDBTableHead,MDBTableBody,MDBBtn,MDBInput} from 'mdb-react-ui-kit'
+import {MDBTable,MDBTableHead,MDBTableBody,MDBBtn} from 'mdb-react-ui-kit'
+import { Input } from "reactstrap";
 export default function Mongo() {
 const [data, setData] = useState(null);
 const [loading, setLoading] = useState(true);
@@ -46,44 +47,54 @@ const [model,setModel] = useState('');
     };
    }
 
-  return <div className="App">
+  return <div className="container">
     <h1>API MongoDB</h1>
     <h1>{`${make} ${model} `} </h1>
-    <div>
-    <form >
-      <MDBInput type={'text'} 
-      value={make}
-      placeholder='make'
-      onChange={(e)=>{setMake(e.target.value)}}/>
-      <MDBInput type={'text'} 
-      value={model}
-      placeholder='model'
-      onChange={(e)=>{setModel(e.target.value)}}/>
-    </form>
-    <MDBBtn onClick={handeSubmit} value={'submit'}>Submit</MDBBtn>
-    <MDBBtn onClick={handeDelete} value={'delete'} color='danger'>Delete</MDBBtn>
-    <MDBBtn value={'update'} color='warning'>Update</MDBBtn>
-
+    <div className="row justify-content-center" >
+      <div className="col-12 col-sm-6">
+        <Input type={'text'} 
+              value={make}
+              placeholder='make'
+              onChange={(e)=>{setMake(e.target.value)}}/>
+      </div>
+      <div className="col-12 col-sm-6">
+        <Input type={'text'} 
+              value={model}
+              placeholder='model'
+              onChange={(e)=>{setModel(e.target.value)}}/>
+      </div>
     </div>
+    <div className="row-col-3"> 
+      <MDBBtn onClick={handeSubmit} value={'submit'}>Submit</MDBBtn>
+      <MDBBtn onClick={handeDelete} value={'delete'} color='danger'>Delete</MDBBtn>
+      <MDBBtn value={'update'} color='warning'>Update</MDBBtn>
+    </div>
+   
+
 
     {loading && <div> a moment please......</div> }
-    {error && <div>{`there is error ${error}`}</div>}
-    <MDBTable bordered borderColor="primary" >
-      <MDBTableHead dark>
+    {error && <div>{`there is error with server ${error}`}</div>}
+    <div className="row">
+      <div className="col">
+        <MDBTable bordered borderColor="primary" >
+        <MDBTableHead dark>
+          <tr>
+            <th>Make</th>
+            <th>Model</th> 
+          </tr>
+        </MDBTableHead>
+        <MDBTableBody>
+        {data && data.map(({_id,make,model})=>(
         <tr>
-          <th>Make</th>
-          <th>Model</th> 
+          <th>{make}</th>
+          <th>{model}</th>
         </tr>
-      </MDBTableHead>
-      <MDBTableBody>
-      {data && data.map(({_id,make,model})=>(
-      <tr>
-        <th>{make}</th>
-        <th>{model}</th>
-      </tr>
-      ))}
-          </MDBTableBody>
-     </MDBTable>
+        ))}
+            </MDBTableBody>
+        </MDBTable>
+      </div>
+    </div>
+    
     </div>
     ;
 

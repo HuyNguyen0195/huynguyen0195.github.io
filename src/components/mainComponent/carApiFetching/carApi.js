@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { json } from 'react-router-dom';
 import { Container, Row, Col, Table, DropdownMenu, DropdownItem, DropdownToggle, UncontrolledDropdown, Input, Button } from 'reactstrap';
 import { fetchCars } from '../../../reduxStore/actionCreators';
+import Pagination from './pagination';
+import ShowLists from './showLists';
 
 const mapStateToProps = (state) =>{
     return {
@@ -12,37 +14,34 @@ const mapStateToProps = (state) =>{
 const mapDispatchToProps = {
       fetchCars: () => (fetchCars()),
 } 
-const showList =({props, year, make, model, price})=>{
-  return props.state.cars
-  .filter(json=>{return (make != '' ? json.make == make : json ) })
-  .filter(json=>{return (model != '' ? json.model == model : json ) })
-  .filter(json=>{return (year != '' ? json.year == year : json ) })
-  .filter(json=>{return (price != '' ? json.price <= price : json ) })
-  .map((json)=>(
-        <tr key={json.id}>
-        <td>{json.year}</td>
-        <td>{json.make}</td>
-        <td>{json.model}</td>
-        <td>{json.horsepower}</td>
-        <td>{json.price}</td>
-        </tr>)
-        )
-}
 
 function  CarApi(props){
+  
+  useEffect(()=>{
+   props.fetchCars();
+  },[]);
+
+  const lists = props.state.cars;
   const [price, setPrice] = useState('');
   const [year, setYear] = useState('');
   const [make, setMake] = useState('');
   const [model, setModel] = useState('');
-  useEffect(()=>{
-   props.fetchCars();
-  },[]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [listsPerPage] = useState(20);
+  const indexOfLastData = currentPage * listsPerPage;
+  const indexOfFirstData = indexOfLastData - listsPerPage;
+  const currentLists = lists.slice(indexOfFirstData, indexOfLastData);
+
+  const paginate= pageNumber =>{
+    setCurrentPage(pageNumber);
+  }
+
   return (
     <div>
       <Container>
-        <Row>
+        <Row className='mt-3'>
           <Col><h1>Table Car List</h1></Col>
-          <Col>
+          <Col className='mt-1'>
             <UncontrolledDropdown>
               <DropdownToggle>Sort By</DropdownToggle>
               <DropdownMenu>
@@ -56,6 +55,14 @@ function  CarApi(props){
           </Col>
         </Row>
         <hr/>
+        <Row>
+          <Col>
+            <Pagination 
+            listsPerPage={listsPerPage} 
+            totalLists={lists.length} 
+            paginate={paginate} />
+          </Col>
+        </Row>
         <Row>
           <Col><Input onChange={(e)=>(setYear(e.target.value))} placeholder='year' /></Col>
           <Col><Input onChange={(e)=>(setMake(e.target.value))} placeholder='make' /></Col>
@@ -80,7 +87,12 @@ function  CarApi(props){
               </tr>
             </thead>
             <tbody>
-              {showList({props:props,year:year,make:make,model:model,price:price})}
+              <ShowLists 
+                lists={currentLists} 
+                year={year} 
+                make={make} 
+                model={model} 
+                price={price} />
             </tbody>
           </Table>
         </Row>
@@ -88,6 +100,5 @@ function  CarApi(props){
     </div>
   );
 }
-//here
 
 export default connect(mapStateToProps,mapDispatchToProps)(CarApi);
