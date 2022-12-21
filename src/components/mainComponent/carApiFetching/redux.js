@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { json } from 'react-router-dom';
 import { Container, Row, Col, Table, DropdownMenu, DropdownItem, DropdownToggle, UncontrolledDropdown, Input, Button } from 'reactstrap';
 import { fetchCars } from '../../../reduxStore/actionCreators';
-import Pagination from './pagination';
+import Paginate from './paginate';
 import ShowLists from './showLists';
 
 const mapStateToProps = (state) =>{
@@ -27,7 +27,7 @@ function  CarApi(props){
   const [make, setMake] = useState('');
   const [model, setModel] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const [listsPerPage] = useState(20);
+  const [listsPerPage] = useState(30);
   const indexOfLastData = currentPage * listsPerPage;
   const indexOfFirstData = indexOfLastData - listsPerPage;
   const currentLists = lists.slice(indexOfFirstData, indexOfLastData);
@@ -57,10 +57,12 @@ function  CarApi(props){
         <hr/>
         <Row>
           <Col>
-            <Pagination 
+
+            <Paginate
             listsPerPage={listsPerPage} 
             totalLists={lists.length} 
             paginate={paginate} />
+
           </Col>
         </Row>
         <Row>

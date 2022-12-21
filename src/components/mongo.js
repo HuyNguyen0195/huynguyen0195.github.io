@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import axios from "axios";
-import {MDBTable,MDBTableHead,MDBTableBody,MDBBtn} from 'mdb-react-ui-kit'
+import {MDBTable,MDBTableHead,MDBTableBody,button} from 'mdb-react-ui-kit'
 import { Input } from "reactstrap";
 export default function Mongo() {
 const [data, setData] = useState(null);
@@ -65,9 +65,9 @@ const [model,setModel] = useState('');
       </div>
     </div>
     <div className="row-col-3"> 
-      <MDBBtn onClick={handeSubmit} value={'submit'}>Submit</MDBBtn>
-      <MDBBtn onClick={handeDelete} value={'delete'} color='danger'>Delete</MDBBtn>
-      <MDBBtn value={'update'} color='warning'>Update</MDBBtn>
+      <button className="btn btn-primary" onClick={handeSubmit} value={'submit'}>Submit</button>
+      <button className="btn btn-warning" onClick={handeDelete} value={'delete'} color='danger'>Delete</button>
+      <button className="btn btn-info" value={'update'} color='warning'>Update</button>
     </div>
    
 

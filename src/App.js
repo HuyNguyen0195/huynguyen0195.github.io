@@ -1,19 +1,19 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from './components/footerComponent';
+import Footer from './components/footer';
 import {Route, Routes } from 'react-router-dom'
 import About from './components/mainComponent/about/aboutComponent';
-import Mongo from './components/mainComponent/mongo/mongoComponent';
+import Mongo from './components/mongo';
 import Gomoku from './components/mainComponent/games/gomokuComponent';
-import NoPage from './components/mainComponent/noPageComponent';
-import CarApi from './components/mainComponent/carApiFetching/carApi';
-import Header from './components/headerComponent';
+import NoPage from './components/noPage';
+import CarApi from './components/mainComponent/carApiFetching/redux';
+import NavMenu from './components/navMenu';
 
 function App() {
   return (
         <div className="body">
           <div className="topnav" >
-            <Header/>
+            <NavMenu/>
           </div>
           <div className="content">
             <Routes>

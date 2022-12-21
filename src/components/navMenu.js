@@ -4,7 +4,23 @@ import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem,
   Form, FormGroup, Input, Label } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
-class Header extends Component {
+const links = [
+  {href:"/", text:"Home",className:"fa fa-sm fa-home"},
+  {href:"/mongo", text:"Mongo", className:"fa fa-sm fa-list"},
+  {href:"/gomoku", text:"Gomoku", className:"fa fa-sm fa-info"},
+  {href:"/redux", text:"Redux", className:"fa fa-sm fa-list"},
+  {href:"/about", text:"About", className:"fa fa-sm fa-info"},
+  {href:"/*", text:"Nopage", className:"fa fa-sm fa-home"},
+];
+const createNavItem = ({href,text,className},toggle) => (
+  <NavItem>
+    <NavLink className="nav-link" to={href} onClick={toggle} >
+      <i className={className} /> {text}
+    </NavLink>
+  </NavItem>
+);
+
+export default class NavMenu extends Component {
 
   constructor(props) {
     super(props);
@@ -40,50 +56,22 @@ class Header extends Component {
   render() {
     return (
       <React.Fragment>
-        
-
-        <Navbar dark sticky="top" expand="md">
-          <div className="container">
+        <Navbar dark sticky="top" color='dark' expand="md">
+          <NavbarBrand>HuyNguyen</NavbarBrand>
             <NavbarToggler onClick={this.toggleNav} />
             <Collapse isOpen={this.state.isNavOpen} navbar>
-              <Nav navbar>
-                <NavItem>
-                  <NavLink className="nav-link" to="/" onClick={this.toggleNav}>
-                    <i className="fa fa-home fa-sm " /> Home
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink className="nav-link" to="/mongo" onClick={this.toggleNav}>
-                    <i className="fa fa-list fa-sm" /> Mongo
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink className="nav-link" to="/gomoku" onClick={this.toggleNav}>
-                    <i className="fa fa-info fa-sm" /> Gomoku
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink className="nav-link" to="/redux" onClick={this.toggleNav}>
-                    <i className="fa fa-address-card fa-sm" /> redux
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink className="nav-link" to="/about" onClick={this.toggleNav}>
-                    <i className="fa fa-address-card fa-sm" /> About
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink className="nav-link" to="/nopage" onClick={this.toggleNav}>
-                    <i className="fa fa-address-card fa-sm" /> No page
-                  </NavLink>
-                </NavItem>
-                </Nav>
-                  <span className="navbar-text ml-auto" onClick={this.toggleNav}>
-                      <Button outline onClick={this.toggleModal}>
-                          <i className="fa fa-sign-in " /> Login
-                      </Button>
-                  </span>
+              <Nav className='ml-auto' navbar>
+
+                {links.map(item=>createNavItem(item,this.toggleNav))} 
+
+              </Nav>
+                <span className="navbar-text " onClick={this.toggleNav}>
+                  <Button outline onClick={this.toggleModal}>
+                  <i className="fa fa-sign-in " /> Login
+                  </Button>
+                </span>
             </Collapse>
+
             <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                     <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
                     <ModalBody>
@@ -109,11 +97,9 @@ class Header extends Component {
                         </Form>
                     </ModalBody>
             </Modal>
-          </div>
         </Navbar>
       </React.Fragment>
     );
   }
 }
 
-export default Header;

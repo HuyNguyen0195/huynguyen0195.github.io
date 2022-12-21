@@ -471,7 +471,7 @@ function bestMove(board2d)
     let maxmove ;
     AIcheck("O",board2d)
     let nodes=best_nodes()
-    console.log(nodes)
+    //console.log(nodes)
       for (let i = 0; i < nodes.length ; i++) 
         {
             if (board2d[nodes[i].rows][nodes[i].cols] === "")  
@@ -479,7 +479,7 @@ function bestMove(board2d)
                 if(nodes[i].value>200)
                 {
                     board2d[nodes[i].rows][nodes[i].cols] = "";
-                    console.log(nodes[i])
+                    //console.log(nodes[i])
                     return nodes[i]
                 }
                 board2d[nodes[i].rows][nodes[i].cols] = "O";
