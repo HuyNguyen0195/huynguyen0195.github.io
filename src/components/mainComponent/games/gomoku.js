@@ -612,15 +612,23 @@ const Gomoku = () => {
         }
     }
 
-    return (<div className='gomoku'>
-                <div className='gomokuBar'>
-                    <Message value={message} />
-                    <Refresh onClick={refresh} value={'Refresh'} />
+    return (<div className='container'>
+                <div className='row'>
+                    <h1>This is the game with MiniMAx algorithms</h1>
+                    </div>
+                <div className='row'>
+                    <div className='col'>
+                        <Message value={message} />
+                    </div>
+                    <div className='col'>
+                        <Refresh onClick={refresh} value={'Refresh'} />
+                    </div>
                 </div>
-                <div className='gomokuBoard'>            
+                <div className='row'>            
                     <Board onClick={handleInput} value={board} /> 
                 </div>
-            </div>)
+            </div>
+            )
 }
 
 export default Gomoku

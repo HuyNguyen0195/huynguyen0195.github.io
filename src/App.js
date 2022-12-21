@@ -4,7 +4,7 @@ import Footer from './components/footer';
 import {Route, Routes } from 'react-router-dom'
 import About from './components/mainComponent/about/aboutComponent';
 import Mongo from './components/mongo';
-import Gomoku from './components/mainComponent/games/gomokuComponent';
+import Gomoku from './components/mainComponent/games/gomoku';
 import NoPage from './components/noPage';
 import CarApi from './components/mainComponent/carApiFetching/redux';
 import NavMenu from './components/navMenu';
