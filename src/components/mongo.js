@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import axios from "axios";
-import {MDBTable,MDBTableHead,MDBTableBody,button} from 'mdb-react-ui-kit'
+import {MDBTable,MDBTableHead,MDBTableBody} from 'mdb-react-ui-kit'
 import { Input } from "reactstrap";
 export default function Mongo() {
 const [data, setData] = useState(null);

@@ -2,12 +2,12 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './components/footer';
 import {Route, Routes } from 'react-router-dom'
-import About from './components/mainComponent/about/aboutComponent';
+import About from './components/About/aboutComponent';
 import Mongo from './components/mongo';
-import Gomoku from './components/mainComponent/games/gomoku';
-import NoPage from './components/noPage';
-import CarApi from './components/mainComponent/carApiFetching/redux';
+import Gomoku from './components/Gomoku/gomoku';
+import CarApi from './components/Redux/redux';
 import NavMenu from './components/navMenu';
+import Movie from './components/Movie/Movie';
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
               <Route path='/gomoku' element={<Gomoku/>}/>
               <Route path='/redux' element={<CarApi/>}/>
               <Route path='/about' element={<About/>}/>
-              <Route path='/nopage' element={<NoPage/>}/>
+              <Route path='/movie' element={<Movie/>}/>
             </Routes>
           </div>
           <div className="footer" ><Footer/></div>

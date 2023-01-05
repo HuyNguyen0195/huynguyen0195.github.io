@@ -4,13 +4,13 @@ import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem,
   Form, FormGroup, Input, Label } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
-const links = [
+const pages = [
   {href:"/", text:"Home",className:"fa fa-sm fa-home"},
   {href:"/mongo", text:"Mongo", className:"fa fa-sm fa-list"},
   {href:"/gomoku", text:"Gomoku", className:"fa fa-sm fa-info"},
   {href:"/redux", text:"Redux", className:"fa fa-sm fa-list"},
   {href:"/about", text:"About", className:"fa fa-sm fa-info"},
-  {href:"/*", text:"Nopage", className:"fa fa-sm fa-home"},
+  {href:"/movie", text:"Movie", className:"fa fa-sm fa-home"},
 ];
 const createNavItem = ({href,text,className},toggle) => (
   <NavItem>
@@ -62,7 +62,7 @@ export default class NavMenu extends Component {
             <Collapse isOpen={this.state.isNavOpen} navbar>
               <Nav className='ml-auto' navbar>
 
-                {links.map(item=>createNavItem(item,this.toggleNav))} 
+                {pages.map(item=>createNavItem(item,this.toggleNav))} 
 
               </Nav>
                 <span className="navbar-text " onClick={this.toggleNav}>
