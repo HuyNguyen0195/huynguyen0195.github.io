@@ -548,7 +548,7 @@ function numberToNode(number) {
     return new Node(Math.floor(number/cols_max),number%cols_max,0)
 }
 
-export function Gomoku(){
+export default function Gomoku(){
     // this is for board
     // default value for all the elemnt is ""
     const [board, setBoard] = useState(Array(rows_max*cols_max).fill("")); 
