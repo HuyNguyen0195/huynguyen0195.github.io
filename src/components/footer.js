@@ -11,10 +11,10 @@ export default function Footer(){
             <SocialIcon network="pinterest" />
             <SocialIcon network="spotify" />
             <SocialIcon network="tiktok" />
-            <h1>Created By HuyNguyen 
+            <h5>Created By HuyNguyen 
                 <a href="https://gomoku-react-d2cd5.web.app">
                 huyqndallas@gmail.com</a>
-            </h1>
+            </h5>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
-import CardMovie from "./CardMovie";
-import CarouseMovie from "./CarouselMovie";
-import SideBar from "./SideBar";
+import CardMovie from "../../components/CardMovie";
+import CarouseMovie from "../../components/CarouselMovie";
+import SideBar from "../../components/SideBar";
 
 const url = "https://api.sampleapis.com/movies/animation"
 export default function Movie(){

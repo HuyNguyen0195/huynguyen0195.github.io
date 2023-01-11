@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Board from './board'
-import Message from './message'
-import Refresh from './refresh'
+import Board from '../../components/Gomoku/Board'
+import Message from '../../components/Gomoku/Message'
+import Refresh from '../../components/Gomoku/Refresh'
 
 const rows_max=15
 const cols_max=15

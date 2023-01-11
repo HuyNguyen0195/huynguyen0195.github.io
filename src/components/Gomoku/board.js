@@ -1,4 +1,4 @@
-import Box from "./box";
+import Box from "./Box";
 const rows_max=15;
 const cols_max=15;
 const pix=30;

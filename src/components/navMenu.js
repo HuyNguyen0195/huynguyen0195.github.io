@@ -9,7 +9,6 @@ const pages = [
   {href:"/mongo", text:"Mongo", className:"fa fa-sm fa-list"},
   {href:"/gomoku", text:"Gomoku", className:"fa fa-sm fa-info"},
   {href:"/redux", text:"Redux", className:"fa fa-sm fa-list"},
-  {href:"/about", text:"About", className:"fa fa-sm fa-info"},
   {href:"/movie", text:"Movie", className:"fa fa-sm fa-home"},
 ];
 const createNavItem = ({href,text,className},toggle) => (
@@ -61,7 +60,7 @@ export default class NavMenu extends Component {
             <NavbarToggler onClick={this.toggleNav} />
             <Collapse isOpen={this.state.isNavOpen} navbar>
               <Nav className='ml-auto' navbar>
-
+                
                 {pages.map(item=>createNavItem(item,this.toggleNav))} 
 
               </Nav>

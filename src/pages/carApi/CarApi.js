@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import { Container, Row, Col, Table, DropdownMenu, DropdownItem, DropdownToggle, 
   UncontrolledDropdown, Input,Button } from 'reactstrap';
 import { fetchCars } from '../../reduxStore/actionCreators';
-import Paginate from './paginate';
-import ShowLists from './showLists';
+import Paginate from '../../components/Paginate';
+import ShowLists from '../../components/ShowLists';
 
 const mapStateToProps = (state) =>{
     return {

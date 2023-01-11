@@ -12,7 +12,7 @@ import {
   MDBProgressBar
 } from 'mdb-react-ui-kit';
 
-export default function ProfilePage() {
+export default function Home() {
   return (
     <section style={{ backgroundColor: '#eee' }}>
       <MDBContainer className="py-5">
@@ -108,12 +108,12 @@ export default function ProfilePage() {
                 <MDBCard>
                   <MDBCardBody>
                   <MDBCardText className="mb-4"><span className="text-primary font-italic me-1">Back End</span> Skills</MDBCardText>
-                  <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>NodeJS</MDBCardText>
+                  <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>NodeJS / .NET</MDBCardText>
                     <MDBProgress className="rounded">
                       <MDBProgressBar width={90} valuemin={0} valuemax={100} />
                     </MDBProgress>
 
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>MongoDB</MDBCardText>
+                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}> SQL / MongoDB</MDBCardText>
                     <MDBProgress className="rounded">
                       <MDBProgressBar width={90} valuemin={0} valuemax={100} />
                     </MDBProgress>
